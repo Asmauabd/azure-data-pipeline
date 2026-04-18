@@ -11,11 +11,17 @@ It simulates a real-world data engineering workflow where files are automaticall
 The pipeline follows a modular and event-driven architecture:
 
 i.Landing Zone (Azure Blob Storage): Entry point for all uploaded files
+
 ii.ADF Event Trigger: Automatically triggers pipeline on file upload
+
 iii.Metadata Validation Layer: Checks file structure and schema
+
 iv.Processing Layer: Handles transformation, conversion, and routing
+
 v.Storage Layer: Loads cleaned data into Azure SQL Database
+
 vi.Reporting Layer: Power BI dashboards for analytics
+
 vii.Archive & Rejected Zones: Stores original processed files and invalid datasets
 # Pipeline Workflow
 1. File Ingestion
@@ -26,10 +32,14 @@ A Get Metadata (GetFileList) activity retrieves all incoming files. Each file is
 
 3. Schema Validation
 A second metadata check (GetFileStructure) validates:
+
 Required columns
+
 File format (CSV or Excel)
+
 Schema consistency
-4. File Routing (Switch Activity)
+
+5. File Routing (Switch Activity)
 Based on validation:
 Valid CSV Files
 Sent directly to Data Flow
@@ -43,16 +53,16 @@ Original file archived
 Invalid Files
 Moved to Rejected Folder
 Removed from landing zone
-5. Data Transformation
+6. Data Transformation
 Azure Data Flows are used to:
 Clean and standardize data
 Handle data type conversions
 Remove invalid or null records
 Map data to SQL schema
-6. Storage & Reporting
+7. Storage & Reporting
 Cleaned data is stored in Azure SQL Database
 Power BI connects directly to SQL for dashboards and insights
-7. Archiving
+8. Archiving
 All successfully processed files are archived to maintain:
 Data lineage
 Auditability
