@@ -1,15 +1,15 @@
 # End-to-End Data Pipeline Using Azure Data Factory
-# Overview
+## Overview
 
 This project showcases the design and implementation of an end-to-end automated data pipeline using Azure Data Factory (ADF). The solution is built to handle data ingestion, validation, transformation, and storage, making data readily available for analytics and reporting.
 
 It simulates a real-world data engineering workflow, where incoming files are automatically processed from a landing zone, validated, transformed, and loaded into a structured database for downstream consumption in Power BI.
 
-# Architecture Overview
+## Architecture Overview
 
 The pipeline follows a modular, scalable, and event-driven architecture:
 
-Landing Zone (Azure Blob Storage) – Entry point for all incoming files
+Landing folder (Azure Blob Storage) – Entry point for all incoming files
 
 ADF Event Trigger – Automatically initiates the pipeline upon file upload
 
@@ -21,13 +21,13 @@ Storage Layer (Azure SQL Database) – Stores cleaned and structured data
 
 Reporting Layer (Power BI) – Enables data visualization and insights
 
-Archive & Rejected Zones – Maintains processed and invalid files for traceability
+Archive & Rejected folder – Maintains processed and invalid files for traceability
 
-# ⚙️ Pipeline Workflow
+## Pipeline Workflow
 
 1️⃣ File Ingestion
 
-Files are uploaded into the Landing Zone, triggering the pipeline using an event-based trigger for real-time processing.
+Files are uploaded into the Landing folder, triggering the pipeline using an event-based trigger for real-time processing.
 
 2️⃣ Metadata Extraction
 
@@ -94,7 +94,7 @@ Power BI connects directly to the database to create dashboards and generate ins
 
 7️⃣ Archiving
 
-All successfully processed files are archived to ensure:
+All original files from the landing folder are archived to ensure:
 
 Data lineage
 
@@ -102,7 +102,7 @@ Auditability
 
 Historical tracking
 
-# Azure Services Used
+## Azure Services Used
 Azure Data Factory (ADF)
 
 Azure Blob Storage
@@ -111,9 +111,11 @@ Azure Functions
 
 Azure SQL Database
 
+Visual Studio Code
+
 Power BI
 
-# Key Features
+## Key Features
 
 Fully automated event-driven pipeline
 
@@ -129,7 +131,7 @@ Built-in error handling and rejection mechanism
 
 End-to-end data lineage and archiving system
 
-# Challenges & Learnings
+## Challenges & Learnings
 Implemented dynamic pipeline logic using Switch, ForEach, and Parameters
 
 Integrated Azure Functions with ADF for file conversion workflows
@@ -140,7 +142,7 @@ Gained hands-on experience troubleshooting pipeline failures and debugging error
 
 Strengthened understanding of real-world ETL pipeline architecture
 
-# Outcome
+## Outcome
 
 Developed a robust, automated, and scalable data pipeline capable of:
 
@@ -152,7 +154,7 @@ Delivering clean, structured data for analytics
 
 This project demonstrates practical experience in cloud-based data engineering, pipeline orchestration, and data workflow automation.
 
-## Author
+### Author
 
 Asmau Abdulkarim
 
